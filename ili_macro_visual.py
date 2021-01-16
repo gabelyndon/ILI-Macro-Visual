@@ -3,14 +3,11 @@
 
 # In[1]:
 
-
 import csv
 import sys
 import matplotlib.pyplot as plt
 
-
 # In[2]:
-
 
 input_file = 'ili_run_sheet.csv'
 output_file = 'conditions_r_met.csv'
@@ -21,9 +18,7 @@ fd = 2
 mdp = 3
 ya = 4
 
-
 # In[3]:
-
 
 with open(input_file,'r',newline='') as f:
     with open(output_file,'w',newline='')as o:
@@ -38,7 +33,37 @@ with open(input_file,'r',newline='') as f:
             print(index,column_header)
             
         #I will grab all anomalies to scatter plot from run data and set up 3 list
-        ili_data,         descript_data, descript, descript_y, descript_descript,         agm,agm_label,agm_data,         weld, weld_pipe, weld_data,         gweq,gweq_pipe,gweq_data,         tap,tap_data,tap_pipe,         tee, tee_pipe, tee_data,         valve, valve_pipe,valve_data,         sleeve,sleeve_pipe,sleeve_data,         anomaly, anomaly_pipe, anomaly_data,         dp_anomaly,dp_anomaly_pipe,dp_anomaly_data,         flange, flange_pipe, flange_data,         composite,composite_pipe,composite_data,         patch,patch_pipe,patch_data,         magnet,magnet_pipe,magnet_data,         casing,casing_pipe,casing_data,         install,install_pipe,install_data,         attach,attach_pipe,attach_data,         trap,trap_pipe,trap_data,         lbend,lbend_pipe,lbend_data,         rbend,rbend_pipe,rbend_data,         ubend,ubend_pipe,ubend_data,         dbend,dbend_pipe,dbend_data,         deform,deform_pipe,deform_data,         = [],[],[],[],[],[],[],[],[],[],         [],[],[],[],[],[],[],[],[],[],         [],[],[],[],[],[],[],[],[],[],         [],[],[],[],[],[],[],[],[],[],         [],[],[],[],[],[],[],[],[],[],         [],[],[],[],[],[],[],[],[],[],         [],[],[],[],[],[],[],[],[],[],         []
+        ili_data,  \
+        descript_data, descript, descript_y, descript_descript, \
+        agm,agm_label,agm_data, \
+        weld, weld_pipe, weld_data, \
+        gweq,gweq_pipe,gweq_data, \
+        tap,tap_data,tap_pipe, \
+        tee, tee_pipe, tee_data, \
+        valve, valve_pipe,valve_data, \
+        sleeve,sleeve_pipe,sleeve_data, \
+        anomaly, anomaly_pipe, anomaly_data, \
+        dp_anomaly,dp_anomaly_pipe,dp_anomaly_data, \
+        flange, flange_pipe, flange_data, \
+        composite,composite_pipe,composite_data, \
+        patch,patch_pipe,patch_data, \
+        magnet,magnet_pipe,magnet_data, \
+        casing,casing_pipe,casing_data, \
+        install,install_pipe,install_data, \
+        attach,attach_pipe,attach_data, \
+        trap,trap_pipe,trap_data, \
+        lbend,lbend_pipe,lbend_data, \
+        rbend,rbend_pipe,rbend_data, \
+        ubend,ubend_pipe,ubend_data, \
+        dbend,dbend_pipe,dbend_data, \
+        deform,deform_pipe,deform_data, \
+        = [],[],[],[],[],[],[],[],[],[], \
+        [],[],[],[],[],[],[],[],[],[], \
+        [],[],[],[],[],[],[],[],[],[], \
+        [],[],[],[],[],[],[],[],[],[], \
+        [],[],[],[],[],[],[],[],[],[], \
+        [],[],[],[],[],[],[],[],[],[], \
+        [],[],[],[],[],[],[],[],[],[],[]
 
         for row in reader:
             odometers = float(row[x])
@@ -95,20 +120,14 @@ with open(input_file,'r',newline='') as f:
             feature_setup('Bend up',ubend,ubend_data,ubend_pipe)
             feature_setup('Bend down',dbend,dbend_data,dbend_pipe)
             
-
-
 # In[4]:
-
 
 print("\n")
 print(lbend_data)
 for index,description in enumerate(set(descript_descript)):
     print(index,description)
 
-
 # In[5]:
-
-
 
 print("\n")
 print("there are " + str(len(tap))+ " taps in this section of pipeline.")
@@ -123,10 +142,7 @@ print("there are " + str(len(rbend)) + " right bends in this section of pipeline
 print("there are " + str(len(ubend)) + " up bends in this section of pipeline")
 print("there are " + str(len(deform)) + " deformations in this section of pipeline")
    
-
-
 # In[6]:
-
 
 fig = plt.figure(dpi = 128, figsize=(11.3,5.75))
 plt.scatter(weld,weld_pipe,s=5000,color='grey',marker='|')
